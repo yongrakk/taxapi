@@ -34,7 +34,7 @@
 
   
 ### 📌주요 기능 
-* 회원가입 ("/szs/signup")
+* 회원가입 ("/api/signup")
   - 입력받은 유저 정보로 DB에 저장 Table:Member, PK:userId
   - 아이디(userId), 비밀번호(password), 이름(name), 주민등록번호(regNo) 를 입력받음
   - 각 입력값이 null 인 경우 가입 불가
@@ -44,12 +44,12 @@
   - 아이디 중복 체크
   - 비밀번호 단방향 암호화, 주민등록번호 양방향 암호화 하여 저장
 
-* 로그인 ("/szs/login")
+* 로그인 ("/api/login")
   - 입력받은 유저 정보로 토큰 발급
   - 아이디(userId), 비밀번호(password) 를 입력받음
   - DB에 저장된 정보와 일치할 경우만 토큰 발급
  
-* 스크래핑 ("/szs/scrap")
+* 스크래핑 ("/api/scrap")
   - 요청 Header - Authorization 
   - 로그인 후에 발급한 토큰을 Authorization에서 전달받아 인증정보 확인
   - 인증된 토큰에 해당하는 유저를 DB에서 조회하여 스크래핑에 요청
@@ -60,7 +60,7 @@
   - 신용카드 소득공제(기준년도, 기준월 , 유저아이디, 기준액) - Table: CreditDeduction
   - 세액공제 (공제년도,유저아이디, 공제액) - Table: TaxCredit
 
-* 결정세액 조회 ("/szs/refund")
+* 결정세액 조회 ("/api/refund")
  - 요청 Header - Authorization
  - 로그인 후에 발급한 토큰을 Authorization에서 전달받아 인증정보 확인
  - 인증된 토큰에 해당하는 유저를 DB에서 조회
